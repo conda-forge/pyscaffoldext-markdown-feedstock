@@ -40,7 +40,7 @@ test:
       GIT_COMMITTER_EMAIL="tester@testing.com"
       GIT_AUTHOR_NAME="conda-forge tester"
       GIT_AUTHOR_EMAIL="tester@testing.com"
-      pytest -m "not skip_on_conda_build" --cov-config setup.cfg
+      pytest -m "not system and not slow" --cov-config setup.cfg
   source_files:
     - tests
     - setup.cfg
