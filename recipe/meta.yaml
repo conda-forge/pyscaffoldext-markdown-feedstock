@@ -51,6 +51,7 @@ test:
     - git
     - tox
     - pre-commit
+    - twine
 
 about:
   home: https://github.com/pyscaffold/pyscaffoldext-markdown
