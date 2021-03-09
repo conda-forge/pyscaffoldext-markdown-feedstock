@@ -35,9 +35,7 @@ test:
     - pyscaffoldext.markdown
   commands:
     - pip check
-    # Just do a simple check here. Maybe in the future we can at least do something
-    # like `putup --pretend --markdown targetdir`, but currently git must be configured.
-    - putup --help
+    - 'putup --help | grep markdown'
   requires:
     - pip
 
