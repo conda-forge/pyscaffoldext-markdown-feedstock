@@ -1,5 +1,5 @@
 {% set name = "pyscaffoldext-markdown" %}
-{% set version = "0.4" %}
+{% set version = "0.4.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyscaffoldext-markdown-{{ version }}.tar.gz
-  sha256: e3b93316619808f00f04b15d83fc8e938a9ef3e7fab81803a087159b6fcdab57
+  sha256: 6959e5a3ebf2a7a2b1226a4071ecbb61e3e89358c68d1dcf3678f31fa1cd14ce
 
 build:
   number: 0
@@ -33,14 +33,10 @@ test:
     - pyscaffoldext.markdown
   commands:
     - pip check
-    - 'putup --help | grep markdown'
+    - putup --help | grep markdown
     # PyScaffold uses Git, so add the necessary environment variables to configure it.
     - >
-      GIT_COMMITTER_NAME="conda-forge tester"
-      GIT_COMMITTER_EMAIL="tester@testing.com"
-      GIT_AUTHOR_NAME="conda-forge tester"
-      GIT_AUTHOR_EMAIL="tester@testing.com"
-      pytest -m "not system and not slow" --cov-config setup.cfg
+      GIT_COMMITTER_NAME="conda-forge tester" GIT_COMMITTER_EMAIL="tester@testing.com" GIT_AUTHOR_NAME="conda-forge tester" GIT_AUTHOR_EMAIL="tester@testing.com" pytest -m "not system and not slow" --cov-config setup.cfg
   source_files:
     - tests
     - setup.cfg
