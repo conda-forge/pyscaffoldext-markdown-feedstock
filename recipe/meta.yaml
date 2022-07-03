@@ -1,6 +1,5 @@
 {% set name = "pyscaffoldext-markdown" %}
-{% set version = "0.4.1" %}
-
+{% set version = "0.5" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyscaffoldext-markdown-{{ version }}.tar.gz
-  sha256: 6959e5a3ebf2a7a2b1226a4071ecbb61e3e89358c68d1dcf3678f31fa1cd14ce
+  sha256: 7f2713b1cabdae350d162756c9ea07e10c1e76d85d09daaa8d70cef430b8b5db
 
 build:
   number: 0
@@ -22,9 +21,9 @@ requirements:
     - setuptools-scm
   run:
     - importlib-metadata
-    - pyscaffold >=4.0b4,<5.0a0
+    - myst-parser
+    - pyscaffold >=4.1rc1,<5.0a0
     - python >=3.6
-    - recommonmark
     - wheel >=0.31
 
 test:
