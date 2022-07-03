@@ -5,14 +5,14 @@ package:
   name: {{ name|lower }}
   version: {{ version }}
 
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyscaffoldext-markdown-{{ version }}.tar.gz
+  sha256: 7f2713b1cabdae350d162756c9ea07e10c1e76d85d09daaa8d70cef430b8b5db
+
 build:
   number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-
-source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyscaffoldext-markdown-{{ version }}.tar.gz
-  sha256: 7f2713b1cabdae350d162756c9ea07e10c1e76d85d09daaa8d70cef430b8b5db
 
 requirements:
   host:
